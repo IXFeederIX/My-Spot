@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #fff;
+  }
+  
+  header {
+    background-color: #333;
+    padding: 1rem;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+h1{
+  padding: 10px 10px;
+  background-color: #fff;
+  color: #222;
+  border-radius: 25px;
+}
+  nav{
+    margin-left: 1rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .btn{
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background-color: #fff;
+    padding: 10px 10px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .btn:hover{
+    background-color: #f2f2f2;
+  }
+  .player{
+    font-family: 'Be Vietnam Pro', sans-serif;
+    display: flex;
+    justify-content: space-between;
+  }
+ 
+ 
+  .btn:active{
+    transform: translateY(2px);
+  }
+  
+  main {
+    padding: 4rem;
+  }
+.green-bar{
+background-color: rgb(43, 255, 1);
+width: 1px;
+height: 10px;
+}
+  .featured-playlist {
+    text-align: center;
+    background-color: rgb(0, 0, 0, 0.2);
+    height: 75px;
+  }
+  .add-element{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    position:relative;
+    left: 34%;
+    color:#000;
+   bottom: 90px;
+    justify-content: space-evenly;
+background-color: #fff;
+    flex-direction: column;
+    border-radius: 5px;
+   
+  }
+.magic-shuffle{
+display: flex;
+position: relative;
+right: 10%;
+
+}
+.music-file{
+  font-family: 'Be Vietnam Pro', sans-serif;
+  padding: 3px 3px;
+  border-bottom: 1px solid white;
+}
+.music-file:hover{
+  background-color: #f1f1f1;
+  color: #000;
+}
+.active{
+  background-color: #f1f1f1;
+  color: #000;
+}
+ul, li{
+    list-style-type: decimal;
+}
+
+  .add-btn{
+    background-color: #f1f1f1;
+    padding: 5px 5px;
+    border-radius: 10px;
+     font-family: 'Be Vietnam Pro', sans-serif;
+  }
+  .music-length{
+    height: 10px;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #111;
+    margin-bottom: 10px;
+  }
+  .playlist-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    top: 25%;
+    right: 3%;
+    position: relative;
+    
+  }
+  .playlist-btn{
+    background-color: rgb(65, 65, 65);
+    width: 18.75em;
+    position: absolute;
+    margin-left: 12px;
+  margin-top: -7px;
+  }
+  .my-playlist-btn {
+    background-color: rgb(255, 254, 254);
+    padding: 10px 10px;
+    float: right;
+    margin-left: 10px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .my-playlist-btn:hover {
+    background-color: rgba(255, 254, 254, 0.8);
+  }
+  .music-container{
+    width: 21em;
+    height: 150px;
+   float: right;
+   margin-top: 10px;
+   margin-bottom: 50px;
+   background-color: #333;
+   display: flex;
+top: 50%;
+position: relative;
+  }
+.playlist{
+  flex: 1;
+  overflow-y: scroll;
+  width: 18.75em;
+  height: 31.25em;
+  background-color: rgb(0, 0, 0, 0.2);
+  margin: 10px 10px;
+  display: flex;
+  flex-direction: column;
+}
+  footer {
+    background-color: #333;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  @media (max-width: 960px){
+    body{
+      display:flex;
+      flex-direction:column;
+      justify-content: space-between;
+
+    }
+main{
+  padding: 1rem;
+}
+.playlist{
+justify-content: start;
+  justify-items: self-start;
+  margin: 0;
+  width: 100%;
+}
+.music-container{
+  width: 100%;
+  margin-bottom: 50px;
+}
+.playlist-btn{
+width: 97%;
+right: 1%;
+
+}
+
+.my-playlist-btn {
+  padding: 5px 5px;
+
+  margin-left: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+.btn{
+  padding: 7px 7px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+.magic-shuffle{
+
+  right: 0%;
+  
+  }
+  }
