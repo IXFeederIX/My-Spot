@@ -46,7 +46,7 @@ function setDuration(){
       songArtist.innerText = albumData[current[0].data]?.artist || "N/A";
       songQuality.innerText = albumData[current[0].data]?.bitrate ? albumData[current[0].data].bitrate + "kbps" : "N/A";
       songAlbum.innerText = albumData[current[0].data]?.album || "N/A";
-      songCover.src= albumData[current[0].data].picture;
+      songCover.src= albumData[current[0].data].pictureUrl;
       
      
     }, 3000);
@@ -337,10 +337,14 @@ function create_playlist(files){
        
           const { artist, title, album, picture} = tag.tags;
           
-          const blob = new Blob([picture.data], { type: picture.format });
-          const objectURL = window.URL.createObjectURL(blob);
-          
-          albumData[i] = { artist, title, album, picture: objectURL, bitrate: bitrate };
+       
+          albumData[i] = { artist, title, album, picture, bitrate: bitrate }
+          if (picture) {
+            const { data, format } = picture;
+            const base64 = arrayBufferToBase64(data);
+            const imageUrl = `data:${format};base64,${base64}`;
+            albumData[i].pictureUrl = imageUrl; // push the link into the albumData array
+          }
           file.duration = audio.duration;
           const duration = formatDuration(audio.duration);
           const musicDuration = document.createTextNode(` (${duration})`);
@@ -348,7 +352,15 @@ function create_playlist(files){
           newFiles[i].duration = duration;
         
        
-         
+          function arrayBufferToBase64(buffer) {
+            let binary = "";
+            const bytes = new Uint8Array(buffer);
+            const len = bytes.byteLength;
+            for (let i = 0; i < len; i++) {
+              binary += String.fromCharCode(bytes[i]);
+            }
+            return btoa(binary);
+          }
         
         }, 
         onError: function(error){
