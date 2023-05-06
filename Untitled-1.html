@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
       <script src="https://kit.fontawesome.com/e8ceb53c90.js" crossorigin="anonymous"></script>
-
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js" integrity="sha512-YsR46MmyChktsyMMou+Bs74oCa/CDdwft7rJ5wlnmDzMj1mzqncsfJamEEf99Nk7IB0JpTMo5hS8rxB49FUktQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <title>Clon de Spotify</title>
 </head>
 <body>
@@ -17,6 +17,9 @@
     </nav>
   </header>
   <main>
+    <div class="track-name">
+    <span class="track"></span>
+    </div>
     <div class="music-length">
     <div class="green-bar"></div>
     </div>
@@ -33,16 +36,21 @@
 
       <div class="playlist-grid">
         <button class="btn magic-shuffle" onclick="shuffle()"><i class="fa-solid fa-wand-magic-sparkles"></i></button>
-      <button class="btn"><i class="fa-solid fa-backward"></i></button>
+      <button class="btn" onclick="previous()"><i class="fa-solid fa-backward"></i></button>
       <button class="btn play-pause"><i class="fa-solid fa-play"></i><span> / </span><i class="fa-solid fa-pause"></i></button>
     <button class="btn foward" onclick="next()"><i class="fa-solid fa-forward"></i></button>  
-    </div>
-    <div class="music-container">
-      <img class="cover">
-      <p class="song-name">N/A</p> 
-     <p class="quality">N/A</p>
-     <p class="Artist">N/A</p>
-     <p class="Album">N/A</p>
+  <button class="btn speaker"><i class="fa-solid fa-volume-high"></i></button>  
+  </div>
+ 
+  <div class="music-container">
+    <img class="cover" src="">  
+      <span class="audio-information">Audio Information:</span>
+ 
+      <p class="tile">Song Name :</p><p class="song-name">N/A</p> 
+      <p class="tile">Quality :</p> <p class="quality">N/A</p>
+      <p class="tile">Artist :</p> <p class="Artist">N/A</p>
+      <p class="tile">Album :</p> <p class="Album">N/A</p>
+      
      </div>
 
     </section>

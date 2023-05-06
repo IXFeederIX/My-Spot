@@ -137,6 +137,7 @@ ul, li{
     position: relative;
     
   }
+
   .playlist-btn{
     background-color: rgb(65, 65, 65);
     width: 18.75em;
@@ -151,18 +152,35 @@ ul, li{
     margin-left: 10px;
     transition: background-color 0.3s ease-in-out;
   }
-  
+
   .my-playlist-btn:hover {
     background-color: rgba(255, 254, 254, 0.8);
   }
+  .tile{
+    font-weight: 200;
+    color: rgb(211, 211, 211);
+  }
+    .cover{
+    width: 320px;
+    height: 320px;
+align-self: center;
+    padding: 30px 30px;
+
+
+  }
   .music-container{
+   font-family: 'Be Vietnam Pro', sans-serif;
     width: 21em;
-    height: 150px;
-   float: right;
-   margin-top: 10px;
+    height: 33em;
+    float: right;
+   margin-top: 5px;
+   
    margin-bottom: 50px;
+   flex-direction: column;
+   justify-content: space-between;
    background-color: #333;
    display: flex;
+   padding-bottom: 10px;
 top: 50%;
 position: relative;
   }
@@ -175,6 +193,15 @@ position: relative;
   margin: 10px 10px;
   display: flex;
   flex-direction: column;
+}
+.track{
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 2em;
+  font-weight: 700;
+}
+.track-name{
+ padding: 5px 5px;
+  margin-bottom: 15px;
 }
   footer {
     background-color: #333;
@@ -230,7 +257,7 @@ right: 1%;
 
 .my-playlist-btn {
   padding: 5px 5px;
-
+  float: none;
   margin-left: 10px;
   transition: background-color 0.3s ease-in-out;
 }
@@ -238,12 +265,29 @@ right: 1%;
   padding: 7px 7px;
   border-radius: 25px;
   font-weight: 700;
-  font-size: 1em;
+
   transition: all 0.3s ease;
 }
+
 .magic-shuffle{
 
   right: 0%;
   
   }
+  .playlist-grid{
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+   
+  }
+
+  .btn{
+
+    font-size: 0.7em;
+  }
+.track{
+  font-size: 1em;
+}
   }
