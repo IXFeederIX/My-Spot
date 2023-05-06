@@ -373,7 +373,7 @@ function create_playlist(files){
       jsmediatags.read(file, {
         
         onSuccess: function(tag) {
-          console.log(tag);
+    
              const fileSizeInKb = file.size / 1024;
           const durationInSeconds = parseInt(audio.duration);
          bitrate = Math.round((fileSizeInKb * 8) / durationInSeconds);
