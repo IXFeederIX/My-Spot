@@ -4,7 +4,47 @@ const foward = document.querySelector(".foward")
 const speaker = document.querySelector(".speaker")
 const progressBar = document.querySelector(".green-bar");
 const track = document.querySelector(".track")
+const playlist = document.querySelector(".playlist");
 
+
+
+
+playlist.addEventListener("dblclick", (e) => {
+  if (newFiles.length > 0) {
+    const clicked = e.target;
+    const indexed = Array.from(playlist.children).indexOf(clicked) - 1;
+  
+    index = indexed
+   lastPlayed.push(current[0])
+   current.pop()
+    current.push(newFiles[index])
+    Newaudio.pause()
+    nextTrack = []
+    index++
+nextTrack.push(newFiles[index])
+    setTimeout(() => {
+      Newaudio.src = current[0].src;
+      setDuration()
+      Newaudio.load();
+    updateTimer() 
+    }, 2000);
+    
+    
+    loadAudio();
+    
+    
+    
+        
+
+    
+
+  } else if(indexed === -2) {
+
+
+  }else{
+
+  }
+});
 const jsmediatags = window.jsmediatags
 let add = document.querySelector(".add-btn").style.display = "none";
 let seconds = 0;
@@ -46,7 +86,10 @@ function setDuration(){
       songArtist.innerText = albumData[current[0].data]?.artist || "N/A";
       songQuality.innerText = albumData[current[0].data]?.bitrate ? albumData[current[0].data].bitrate + "kbps" : "N/A";
       songAlbum.innerText = albumData[current[0].data]?.album || "N/A";
-      songCover.src= albumData[current[0].data].pictureUrl;
+      songCover.src= albumData[current[0].data].pictureUrl
+      if( typeof albumData[current[0].data].pictureUrl === "undefined"){
+        songCover.src = "coversample.png"
+      }
       
      
     }, 3000);
@@ -318,7 +361,7 @@ function create_playlist(files){
     const tracklist = document.querySelector(".track-list")
    
     tracklist.appendChild(music)
-    trackDuration.classList.add(".duration-file")
+    trackDuration.classList.add("duration-file")
     
     music.appendChild(musicName);
     music.appendChild(trackDuration) 
@@ -451,7 +494,12 @@ minutes = Math.floor(Newaudio.currentTime / 60)
   } if (Newaudio.currentTime === 0) {
     Newaudio.currentTime = 0;
     clear();
+  } else if(e.key === "ArrowLeft"){
+    previous()
+  }else if (e.key === "ArrowRight"){
+    next()
   }
+ 
 
 }
 

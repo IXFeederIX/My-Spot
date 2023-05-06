@@ -75,6 +75,7 @@ height: 10px;
     text-align: center;
     background-color: rgb(0, 0, 0, 0.2);
     height: 75px;
+    border-radius:10px;
   }
   .add-element{
     width: 500px;
@@ -98,8 +99,13 @@ right: 10%;
 }
 .music-file{
   font-family: 'Be Vietnam Pro', sans-serif;
-  padding: 3px 3px;
-  border-bottom: 1px solid white;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 10px;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 .music-file:hover{
   background-color: #f1f1f1;
@@ -168,36 +174,71 @@ align-self: center;
 
 
   }
-  .music-container{
-   font-family: 'Be Vietnam Pro', sans-serif;
+  .music-container {
+    font-family: 'Be Vietnam Pro', sans-serif;
     width: 21em;
     height: 33em;
     float: right;
-   margin-top: 5px;
-   
-   margin-bottom: 50px;
-   flex-direction: column;
-   justify-content: space-between;
-   background-color: #333;
-   display: flex;
-   padding-bottom: 10px;
-top: 50%;
-position: relative;
+    margin-top: 5px;
+    margin-bottom: 50px;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #333;
+    display: flex;
+    padding-bottom: 10px;
+    top: 50%;
+    position: relative;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, #222, #444);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    animation: slide-in 0.5s ease-out;
   }
-.playlist{
-  flex: 1;
-  overflow-y: scroll;
-  width: 18.75em;
-  height: 31.25em;
-  background-color: rgb(0, 0, 0, 0.2);
-  margin: 10px 10px;
-  display: flex;
-  flex-direction: column;
-}
+  @keyframes slide-in {
+    from {
+      transform: translateY(50%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+  .playlist {
+    flex: 1;
+    overflow-y: scroll;
+    width: 18.75em;
+    height: 31.25em;
+    background-color: rgb(0, 0, 0, 0.2);
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  .playlist::-webkit-scrollbar {
+    width: 0.4em;
+  }
+  
+  .playlist::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 10px;
+  }
+  
+  .playlist::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+
 .track{
   font-family: 'Be Vietnam Pro', sans-serif;
   font-size: 2em;
   font-weight: 700;
+}
+.duration-file{
+float: right;
+
 }
 .track-name{
  padding: 5px 5px;
@@ -291,3 +332,4 @@ right: 1%;
   font-size: 1em;
 }
   }
+  
